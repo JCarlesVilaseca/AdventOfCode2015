@@ -16,9 +16,7 @@ process.stdin.on 'readable', ->
 			locations = locations.add(parts[1])
 			locations = locations.add(parts[2])
 
-			distances["#{parts[1]}-#{parts[2]}"] = parseInt(parts[3])
-			distances["#{parts[2]}-#{parts[1]}"] = parseInt(parts[3])
-
+			distances["#{parts[1]}-#{parts[2]}"] = distances["#{parts[2]}-#{parts[1]}"] = parseInt(parts[3])
 
 process.stdin.on 'end', ->
 	console.log shortest(locations,0,null)
