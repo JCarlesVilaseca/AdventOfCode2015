@@ -20,7 +20,7 @@ process.stdin.on 'readable', ->
 	  			when '>' then x += 1
 
 	  		pos = x + '.' + y
-
+	  		console.log "#{chr} #{x} #{y}"
 	  		house[pos] = true
 
 process.stdin.on 'end', ->
