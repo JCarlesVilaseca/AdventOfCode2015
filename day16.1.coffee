@@ -47,8 +47,8 @@ Array.prototype.first = (func)->
 
 solve = (match, sues)->
 	return sues.first (sue)->
-		compounds = Object.keys(sue.compounds)
+		names = Object.keys(sue.compounds)
 
-		return true if Object.keys(sue.compounds).all (compound)->
-			sue.compounds[compound] == match[compound]
+		return true if names.all (name)->
+			sue.compounds[name] == match[name]
 		false

@@ -47,13 +47,13 @@ Array.prototype.first = (func)->
 
 solve = (match, sues)->
 	return sues.first (sue)->
-		compounds = Object.keys(sue.compounds)
+		names = Object.keys(sue.compounds)
 
-		return true if Object.keys(sue.compounds).all (compound)->
-			switch compound
+		return true if names.all (name)->
+			switch name
 				when 'cats' or 'trees'
-					return sue.compounds[compound] > match[compound]
+					return sue.compounds[name] > match[name]
 				when 'pomeranians' or 'goldfish'
-					return sue.compounds[compound] < match[compound]
-				else return sue.compounds[compound] == match[compound]
+					return sue.compounds[name] < match[name]
+				else return sue.compounds[name] == match[name]
 		false
